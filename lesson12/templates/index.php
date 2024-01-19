@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Новости</h1>
-<?php foreach ($this->articles as $key => $article) : ?>
+<?php foreach ($this->article as $key => $article) : ?>
     <article>
         <h2>
             <a href="http://php1.local/lesson12/article.php?id=<?php echo $article->id ?>"><?php echo $article->title ?></a>

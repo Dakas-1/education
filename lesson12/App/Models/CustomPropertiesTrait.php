@@ -4,9 +4,9 @@ trait CustomPropertiesTrait
 {
     public function __get(string $name)
     {
-        if ($name === 'author' && $this instanceof View) {
-            $author = Author::findById($this->articles->author_id);
-            return $author;
+        if ($name === 'author' && $this instanceof Article) {
+            $author = Author::findById($this->article->author_id);
+            return $author->author;
         } else {
             return $this->data[$name] ?? null;
         }

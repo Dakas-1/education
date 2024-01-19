@@ -34,7 +34,7 @@ abstract class Model
                 $data,
                 static::class
             );
-            return $query[0];
+            return $query ? $query[0] : null ;
         } else {
             return false;
         }

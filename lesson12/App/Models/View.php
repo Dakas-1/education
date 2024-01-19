@@ -2,7 +2,7 @@
 require_once __DIR__ . '/CustomPropertiesTrait.php';
 
 /**
- * @property array $articles;
+ * @property array $article;
  * @property array $author;
  */
 class View implements \Countable, \ArrayAccess

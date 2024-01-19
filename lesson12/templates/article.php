@@ -12,9 +12,9 @@
 </head>
 <body>
 <article>
-    <h2><?php echo $this->articles->title; ?></h2>
-    <p><?php echo $this->articles->content; ?></p>
-    <p><?php echo $this->author->name; ?></p>
+    <h2><?php echo $this->article->title; ?></h2>
+    <p><?php echo $this->article->content; ?></p>
+    <p><?php echo $this->article->author; ?></p>
 
 </article>
 </body>
