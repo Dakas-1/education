@@ -2,11 +2,10 @@
 
 trait CustomPropertiesTrait
 {
-    public function __get(string $name)
-    {
-        if ($name === 'author' && $this instanceof Article) {
-            $author = Author::findById($this->article->author_id);
-            return $author->author;
+    public function __get(string $name){
+       if ($name === 'author' && $this instanceof Article) {
+            $author = Author::findById($this->author_id);
+            return $author;
         } else {
             return $this->data[$name] ?? null;
         }

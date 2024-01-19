@@ -14,8 +14,7 @@
 <article>
     <h2><?php echo $this->article->title; ?></h2>
     <p><?php echo $this->article->content; ?></p>
-    <p><?php echo $this->article->author; ?></p>
-
+    <p><?php echo $this->article->author->name; ?></p>
 </article>
 </body>
 </html>
