@@ -1,5 +1,0 @@
-
-user1###$2y$10$jAEEmqp5Bs.8rJexqzUZKONnCAT4rFrJZS.OBRuXUwgDTfzs9M2N2
-user2###$2y$10$MVkaDytcUsu2DGn4UG7breG4sIFc0nQcC.9sff/5wg/NCmwwpXce2
-user2###$2y$10$V7XXolZJBQW.xV4vpbtt.efpy5HUlCdHqO8F7yv/gfcxi4v65MC7S
-user2###$2y$10$IZ8Zp1z5/TL8Rq1eybFFJOGXdJZtFLmL67xlXT5bXNjAhb27ZPsIK
