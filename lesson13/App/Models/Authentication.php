@@ -2,26 +2,25 @@
 
 class Authentication
 {
-    public function checkPassword()
+    public function checkPassword(string $login, string $password)
     {
-        if (isset($_POST['login']) && isset($_POST['auth_pass'])) {
-            require_once __DIR__ . '/Users.php';
-            $partOfSql = ' WHERE user=:user';
-            $data = ['user' => $_POST['login']];
-            $users = Users::findAll($partOfSql, $data);
-            if ($_POST['login'] === $users[0]->user && password_verify($_POST['auth_pass'], $users[0]->hash)) {
-                return true;
-            } else {
-                return false;
-            }
-        }}
-    public function entranceTo()
+        require_once __DIR__ . '/Users.php';
+        $partOfSql = ' WHERE user=:user';
+        $data = ['user' => $login];
+        $users = Users::findAll($partOfSql, $data);
+        if ($login === $users[0]->user && password_verify($password, $users[0]->hash)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function entranceTo($login, $password)
     {
-        if (isset($_POST['login']) && isset($_POST['auth_pass'])) {
-            if ($this->checkPassword() !== false) {
-                $_SESSION['user'] = $_POST['login'];
+            if ($this->checkPassword($login, $password) !== false) {
+                $_SESSION['user'] = $login;
                 header("Location: ./?ctrl=Index");
-            }
+
         }
     }
 }
