@@ -16,6 +16,7 @@
     <input type="password" name="auth_pass" placeholder="Введите пароль">
     <button class="form_auth_button" type="submit" name="form_auth_submit">Регистрация</button>
 </form>
+<a href = "/lesson13/public/index.php/?ctrl=Index">На главную</a><br>
 </body>
 </html>
 
