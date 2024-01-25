@@ -13,7 +13,7 @@ trait CustomPropertiesTrait
 
     public function __isset(string $name)
     {
-        return isset($isset->data[$name]);
+        return isset($this->data[$name]);
     }
 
     public function __set(string $name, mixed $value)
