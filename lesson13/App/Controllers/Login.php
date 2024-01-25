@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 session_start();
+
 use App\Models\Controller;
 
 class Login extends Controller
@@ -12,8 +13,12 @@ class Login extends Controller
         $this->view->display($template);
         require __DIR__ . '/../Models/Authentication.php';
         $authentication = new \Authentication();
-        $authentication->checkPassword();
-        $authentication->entranceTo();
+        if (isset($_POST['login']) && isset($_POST['auth_pass'])) {
+            $login = $_POST['login'];
+            $password = $_POST['auth_pass'];
+            $authentication->checkPassword($login, $password);
+            $authentication->entranceTo($login, $password);
+        }
     }
 
 }
