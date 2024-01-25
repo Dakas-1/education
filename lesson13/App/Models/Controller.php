@@ -36,7 +36,7 @@ abstract class Controller
             echo '<a href = "/lesson13/public/index.php/?ctrl=ExitClass">Выход</a>';
             $this->action();
         } else {
-            if ($_GET['ctrl'] === 'Index') {
+            if ($_GET['ctrl'] === 'Index' || $_GET['ctrl'] === 'Article') {
                 echo 'Вы вошли как гость<hr>';
                 echo '<a href = "/lesson13/public/index.php/?ctrl=Registration">Регистрация</a><hr>';
                 echo '<a href = "/lesson13/public/index.php/?ctrl=Login">Вход</a><hr>';
