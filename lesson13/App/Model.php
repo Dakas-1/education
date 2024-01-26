@@ -4,7 +4,6 @@ abstract class Model
 {
     public const TABLE = '';
     public $id;
-
     public static function findAll(string $partOfSql, array $data)
     {
         require_once __DIR__ . '/Models/Db.php';
@@ -98,7 +97,7 @@ abstract class Model
 
     public function delete()
     {
-        $sql = 'DELETE FROM news
+        $sql = 'DELETE FROM' . static::TABLE . '
                 WHERE id=:id
                 ';
         $data = [':id' => $this->id];
