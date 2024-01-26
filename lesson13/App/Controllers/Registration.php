@@ -5,14 +5,13 @@ namespace App\Controllers;
 use App\Models\Controller;
 
 require_once __DIR__ . '/../Models/Article.php';
-require_once __DIR__ . '/../Models/Controller.php';
+require_once __DIR__ . '/../Controllers/Controller.php';
 
 class Registration extends Controller
 {
 
     protected function action()
     {
-
         $template = __DIR__ . '/../../templates/registration.php';
         $this->view->display($template);
         if (isset($_POST['login']) && isset($_POST['auth_pass'])) {
