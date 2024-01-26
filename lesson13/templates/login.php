@@ -18,5 +18,6 @@
 </form>
  <label>Нажмите, если не были ранее зарегистрированы</label>
  <a href = "/lesson13/public/index.php/?ctrl=Registration">Регистрация</a><br>
+ <a href = "/lesson13/public/index.php/?ctrl=Index">На главную</a><br>
 </body>
 </html>
