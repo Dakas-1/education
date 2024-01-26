@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-require_once __DIR__ . '/View.php';
+require_once __DIR__ . '/../Models/View.php';
 
 abstract class Controller
 {
@@ -25,27 +25,27 @@ abstract class Controller
     public function __invoke()
     {
         if ($this->access('admin')) {
-            if ($this->access('admin') && isset($_GET['ctrl']) && ($_GET['ctrl'] !== 'Registration' && $_GET['ctrl'] !== 'Login')) {
-                echo '<a href = "/lesson13/public/index.php/?ctrl=Admin">Админ-панель</a><br>';
-                echo '<a href = "/lesson13/public/index.php/?ctrl=ExitClass">Выход</a><br>';
+            if ($this->access('admin') && isset($_GET['ctrl']) && ($_GET['ctrl'] !== 'Registration' && $_GET['ctrl'] !== 'Login' && $_GET['ctrl'] !== 'Admin' )) {
+                echo '<a href = "/lesson13/public/index.php?ctrl=Admin">Админ-панель</a><br>';
+                echo '<a href = "/lesson13/public/index.php?ctrl=ExitClass">Выход</a><br>';
             }
             echo 'Вы вошли как администратор<hr>';
             $this->action();
         } elseif ($this->access('user') && isset($_GET['ctrl']) && ($_GET['ctrl'] !== 'Admin')) {
             echo 'Вы вошли как пользователь<hr>';
-            echo '<a href = "/lesson13/public/index.php/?ctrl=ExitClass">Выход</a>';
+            echo '<a href = "/lesson13/public/index.php?ctrl=ExitClass">Выход</a>';
             $this->action();
         } else {
             if ($_GET['ctrl'] === 'Index' || $_GET['ctrl'] === 'Article') {
                 echo 'Вы вошли как гость<hr>';
-                echo '<a href = "/lesson13/public/index.php/?ctrl=Registration">Регистрация</a><hr>';
-                echo '<a href = "/lesson13/public/index.php/?ctrl=Login">Вход</a><hr>';
+                echo '<a href = "/lesson13/public/index.php?ctrl=Registration">Регистрация</a><hr>';
+                echo '<a href = "/lesson13/public/index.php?ctrl=Login">Вход</a><hr>';
                 $this->action();
             } elseif (isset($_GET['ctrl']) && ($_GET['ctrl'] === 'Registration' || $_GET['ctrl'] === 'Login')) {
                 $this->action();
             } else {
                 echo 'Доступ запрещён<hr>';
-                echo '<a href = "/lesson13/public/index.php/?ctrl=Index">На главную</a>';
+                echo '<a href = "/lesson13/public/index.php?ctrl=Index">На главную</a>';
                 die;
             }
 
