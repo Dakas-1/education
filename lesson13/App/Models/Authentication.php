@@ -15,7 +15,7 @@ class Authentication
         }
     }
 
-    public function entranceTo($login, $password)
+    public function entranceTo(string $login, string $password)
     {
             if ($this->checkPassword($login, $password) !== false) {
                 $_SESSION['user'] = $login;
