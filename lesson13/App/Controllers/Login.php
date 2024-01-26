@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Controllers;
-session_start();
-
 use App\Models\Controller;
 
+session_start();
+require_once __DIR__ . '/../Controllers/Controller.php';
 class Login extends Controller
 {
     protected function action()
