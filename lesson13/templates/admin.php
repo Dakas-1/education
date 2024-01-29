@@ -1,6 +1,3 @@
-<?php
-/** @var View $this */
-?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -25,28 +22,21 @@ if (isset($this)) {
     <p><label for="field1">Редактор статьи:</label></p>
     <p><textarea name="title" id="field1"><?php
             if (isset($_GET['id']) && isset($this)) {
-                $article = Article::findById($_GET['id']);
+                $article = \App\Models\Article::findById($_GET['id']);
                 echo $article->title;
             }
             ?></textarea></p>
 
     <p><label for="field2">Содержание статьи:</label></p>
     <p><textarea name="content" id="field2"><?php
-            if (isset($_GET['id']) && isset($article->content)) {
+            if (isset($_GET['id']) && isset($this)) {
                 echo $article->content;
-            }
-            ?></textarea></p>
-
-    <p><label for="field3">Автор статьи:</label></p>
-    <p><textarea name="author" id="field3"><?php
-            if (isset($_GET['id']) && isset($article->author_id)) {
-                echo $article->author->name;
             }
             ?></textarea></p>
 
     <p><input type="submit" name="push" value="Отправить"></p>
     <?php
-    if (isset($_GET['id']) && isset($article)) {
+    if (isset($_GET['id']) && isset($this)) {
         echo '<p><input type="submit" name="delete" value="Удалить"></p>';
     }
     ?>

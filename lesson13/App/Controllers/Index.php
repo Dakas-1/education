@@ -2,10 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\Controller;
+session_start();
 
-require_once __DIR__ . '/../Models/Article.php';
-require_once __DIR__ . '/../Controllers/Controller.php';
+require __DIR__ . '/../autoload.php';
+
+use App\Models\Article;
 
 class Index extends Controller
 
@@ -15,7 +16,7 @@ class Index extends Controller
     {
         $data = [];
         $partOfSql = '';
-        $this->view->article = \Article::findAll($partOfSql, $data);
+        $this->view->article = Article::findAll($partOfSql, $data);
         $template = __DIR__ . '/../../templates/index.php';
         $this->view->display($template);
     }

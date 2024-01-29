@@ -1,7 +1,11 @@
 <?php
 
-namespace App\Models;
-require_once __DIR__ . '/../Models/View.php';
+namespace App\Controllers;
+
+use App\Models\View;
+
+require __DIR__ . '/../autoload.php';
+
 
 abstract class Controller
 {
@@ -9,7 +13,7 @@ abstract class Controller
 
     public function __construct()
     {
-        $this->view = new \View();
+        $this->view = new View();
     }
 
     protected function access(string $whoIs): bool

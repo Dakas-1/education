@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Models;
+
+require __DIR__ . '/../autoload.php';
+
 class Authentication
 {
     public function checkPassword(string $login, string $password)

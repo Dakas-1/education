@@ -1,7 +1,10 @@
 <?php
-require_once __DIR__ . '/Author.php';
-require_once __DIR__ . '/../Model.php';
-require_once __DIR__ . '/CustomPropertiesTrait.php';
+
+namespace App\Models;
+
+use App\Model;
+
+require __DIR__ . '/../autoload.php';
 
 class Article extends Model
 

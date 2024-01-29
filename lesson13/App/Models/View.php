@@ -1,9 +1,13 @@
 <?php
-require_once __DIR__ . '/CustomPropertiesTrait.php';
+
+namespace App\Models;
+
+require __DIR__ . '/../autoload.php';
 
 /**
  * @property array $articles;
  * @property array $author;
+ * @property array $authors;
  */
 class View implements \Countable, \ArrayAccess
 {

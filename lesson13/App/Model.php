@@ -1,12 +1,17 @@
 <?php
 
+namespace App;
+
+require __DIR__ . '/autoload.php';
+
+use App\Models\Db;
+
 abstract class Model
 {
     public const TABLE = '';
     public $id;
     public static function findAll(string $partOfSql, array $data)
     {
-        require_once __DIR__ . '/Models/Db.php';
         $db = new Db();
         $sql = 'SELECT * FROM' . static::TABLE . $partOfSql;
         return $db->query(
@@ -18,8 +23,6 @@ abstract class Model
 
     public static function findById(int $id)
     {
-
-        require_once __DIR__ . '/Models/Db.php';
         $db = new Db();
         $sql = 'SELECT * FROM' . static::TABLE . ' WHERE id=:id';
         $data = [':id' => $id];
@@ -45,7 +48,7 @@ abstract class Model
         $cols = [];
         $data = [];
         foreach ($fields as $name => $value) {
-            if ('id' == $name) {
+            if ('id' === $name) {
                 continue;
             }
             $cols[] = $name;
@@ -70,7 +73,7 @@ abstract class Model
         $cols = [];
         $data = [];
         foreach ($fields as $name => $value) {
-            if ('id' == $name) {
+            if ('id' === $name) {
                 continue;
             }
             $string[] = $name . ' = ' . "'" . $value . "'";

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Models;
+
 trait CustomPropertiesTrait
 {
     public function __get(string $name){

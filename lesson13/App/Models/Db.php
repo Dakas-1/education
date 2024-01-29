@@ -1,5 +1,10 @@
 <?php
-require __DIR__ . '/../Config.php';
+
+namespace App\Models;
+
+use App\Config;
+
+require __DIR__ . '/../autoload.php';
 
 class Db
 {
@@ -7,7 +12,7 @@ class Db
 
     public function __construct()
     {
-        $config = \App\Config::getConfig();
+        $config = Config::getConfig();
         $this->dbh = new \PDO(
             'mysql:host='
             . $config->data['db']['host'] .
@@ -25,7 +30,7 @@ class Db
         } else {
             $sth->execute();
         }
-        return $sth->fetchAll(PDO::FETCH_CLASS, $class);
+        return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
     }
 
     public function execute(string $query, array $params)
@@ -40,5 +45,3 @@ class Db
         return $this->dbh->lastInsertId();
     }
 }
-
-?>

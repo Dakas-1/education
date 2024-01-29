@@ -2,10 +2,12 @@
 
 namespace App\Controllers;
 
+require __DIR__ . '/../autoload.php';
+
 class Exitclass
 
 {
-    function __construct()
+   public function __construct()
     {
         session_start();
 

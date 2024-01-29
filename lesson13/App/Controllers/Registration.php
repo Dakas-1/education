@@ -2,10 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\Controller;
-
-require_once __DIR__ . '/../Models/Article.php';
-require_once __DIR__ . '/../Controllers/Controller.php';
+require __DIR__ . '/../autoload.php';
 
 class Registration extends Controller
 {

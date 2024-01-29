@@ -1,5 +1,9 @@
 <?php
-require_once __DIR__ . '/../Model.php';
+namespace App\Models;
+
+use App\Model;
+
+require __DIR__ . '/../autoload.php';
 
 class Author extends Model
 {
